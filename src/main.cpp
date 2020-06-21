@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include "class.h"
-#include <conio.h>
 
 using namespace std;
 
@@ -35,6 +34,5 @@ void main()
 	Machine.choice(5);
 	Machine.choice(4);
 	Machine.off();
-	getch();
 }
 
