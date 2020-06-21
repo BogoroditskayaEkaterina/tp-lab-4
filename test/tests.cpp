@@ -78,6 +78,6 @@ TEST(laba4, test5)
     Machine.on();
     Machine.coin(money);
     Machine.choice(4);
-    int money = Machine.off();
+    money = Machine.off();
     EXPECT_EQ(50, money);
 }
