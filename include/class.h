@@ -138,5 +138,10 @@ public:
 	{
 		return states[state];
 	}
+	
+	int ReturnCash()
+	{
+		return cash;
+	}
 
 };
