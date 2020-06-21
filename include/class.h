@@ -36,7 +36,7 @@ public:
 		}
 		else
 		{
-			printf("Автомат уже работает\n");
+			printf("ГЂГўГІГ®Г¬Г ГІ ГіГ¦ГҐ Г°Г ГЎГ®ГІГ ГҐГІ\n");
 		}
 	}
 
@@ -45,7 +45,7 @@ public:
 		state = OFF;
 		if (cash != 0)
 		{
-			cout << "Ваша сдача - " << cash;
+			cout << "Г‚Г ГёГ  Г±Г¤Г Г·Г  - " << cash;
 			return cash;
 		}
 	}
@@ -55,13 +55,13 @@ public:
 		if (state == ACCEPT)
 		{
 			cash += money;
-			printf("Вы положили %d в автомат\n", cash);
+			printf("Г‚Г» ГЇГ®Г«Г®Г¦ГЁГ«ГЁ %d Гў Г ГўГІГ®Г¬Г ГІ\n", cash);
 		}
 		else if (state == WAIT)
 		{
 			state = ACCEPT;
 			cash += money;
-			printf("Вы положили %d в автомат\n", cash);
+			printf("Г‚Г» ГЇГ®Г«Г®Г¦ГЁГ«ГЁ %d Гў Г ГўГІГ®Г¬Г ГІ\n", cash);
 		}
 	}
 
@@ -70,13 +70,13 @@ public:
 		int size = menu.size();
 		for (int i = 0; i < size; i++)
 		{
-			cout << menu[i] << " - " << prices[i] << " - кнопка " << button[i] <<" \n";
+			cout << menu[i] << " - " << prices[i] << " - ГЄГ­Г®ГЇГЄГ  " << button[i] <<" \n";
 		}
 	}
 
 	void PrintState()
 	{
-		cout << "В данный момент автомат " << states[state] << "\n";
+		cout << "Г‚ Г¤Г Г­Г­Г»Г© Г¬Г®Г¬ГҐГ­ГІ Г ГўГІГ®Г¬Г ГІ " << states[state] << "\n";
 	}
 
 	void choice(int button)
@@ -85,13 +85,13 @@ public:
 		{
 			if ((button >= 0) && (button <= 4))
 			{
-				cout << "Вы выбрали " << menu[button] << "\n";
+				cout << "Г‚Г» ГўГ»ГЎГ°Г Г«ГЁ " << menu[button] << "\n";
 				state = CHECK;
 				check(button);
 			}
 			else
 			{
-				printf("Вы нажали неверную кнопку\n");
+				printf("Г‚Г» Г­Г Г¦Г Г«ГЁ Г­ГҐГўГҐГ°Г­ГіГѕ ГЄГ­Г®ГЇГЄГі\n");
 			}
 		}
 	}
@@ -108,7 +108,7 @@ public:
 			}
 			else
 			{
-				printf("Недостаточно средств\n");
+				printf("ГЌГҐГ¤Г®Г±ГІГ ГІГ®Г·Г­Г® Г±Г°ГҐГ¤Г±ГІГў\n");
 				state = WAIT;
 			}
 		}
@@ -124,14 +124,19 @@ public:
 
 	void cook(int button)
 	{
-		printf("Готовим ваш напиток.....\n");
+		printf("ГѓГ®ГІГ®ГўГЁГ¬ ГўГ Гё Г­Г ГЇГЁГІГ®ГЄ.....\n");
 		finish(button);
 	}
 
 	void finish(int button)
 	{
 		state = WAIT;
-		cout << "Ваш напиток - " << menu[button] << " готов.\n";
+		cout << "Г‚Г Гё Г­Г ГЇГЁГІГ®ГЄ - " << menu[button] << " ГЈГ®ГІГ®Гў.\n";
+	}
+	
+	string ReturnState()
+	{
+		return states[state];
 	}
 
 };
