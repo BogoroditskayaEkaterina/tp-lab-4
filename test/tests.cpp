@@ -8,7 +8,7 @@ TEST(laba4, test1)
 	vector <int> prices = { 10, 20, 30, 40, 50 };
 	vector <string> states = { "OFF", "WAIT", "ACCEPT", "CHECK", "COOK" };
     Automata Machine(menu, button, prices, states);
-    
+    string state = Machine.ReturnState();
     EXPECT_EQ("OFF", state);
 }
 
@@ -41,6 +41,7 @@ TEST(laba4, test3)
     Machine.coin(money);
     Machine.choice(2);
     
+    string state = Machine.ReturnState();
     EXPECT_EQ("WAIT", state);
 }
 
