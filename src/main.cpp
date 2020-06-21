@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void main()
+int main()
 {
 	setlocale(LC_ALL, "Russian");
 
@@ -34,5 +34,6 @@ void main()
 	Machine.choice(5);
 	Machine.choice(4);
 	Machine.off();
+	return 0;
 }
 
